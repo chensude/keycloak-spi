@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.example.demo.mapper.UserMapper">
+
+
+    <select id="findByUserNameAndPass" resultType="com.example.demo.entity.UserEntity">
+        select b.user_name, b.pass_phrase from user_store a, user_pass b
+        where a.user_name=b.user_name and b.pass_phrase=#{password} and a.user_name= #{username}
+    </select>
+</mapper>
